@@ -15,7 +15,7 @@
         body {
             background-color: #f5f7fa;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.4;
             padding: 20px;
         }
         
@@ -47,28 +47,63 @@
         
         .main-content {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            flex-direction: column;
+            gap: 20px;
         }
         
-        .form-section {
-            flex: 1;
-            min-width: 300px;
+        .welcome-section {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .welcome-title {
+            font-size: 24px;
+            color: #1e5799;
+            margin-bottom: 15px;
+        }
+        
+        .welcome-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #1e5799;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.3s;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background: #16457a;
+        }
+        
+        .btn-pink {
+            background: #e91e63;
+        }
+        
+        .btn-pink:hover {
+            background: #c2185b;
         }
         
         .preview-section {
-            flex: 2;
-            min-width: 700px;
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
+            display: none;
         }
         
         .section-title {
@@ -77,110 +112,24 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #444;
-        }
-        
-        input, select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border 0.3s;
-        }
-        
-        input:focus, select:focus {
-            border-color: #1e5799;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(30, 87, 153, 0.2);
-        }
-        
-        .fee-details {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-        
-        .fee-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed #ddd;
-        }
-        
-        .fee-total {
-            font-weight: 700;
-            font-size: 18px;
-            color: #1e5799;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 2px solid #ddd;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #1e5799;
-            color: white;
-            padding: 14px 25px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
             text-align: center;
-            transition: background 0.3s;
-            width: 100%;
-            margin-top: 20px;
-        }
-        
-        .btn:hover {
-            background: #16457a;
-        }
-        
-        .btn-print {
-            background: #e91e63;
-            margin-top: 10px;
-        }
-        
-        .btn-print:hover {
-            background: #c2185b;
-        }
-        
-        .chalan-preview {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 4px;
-            flex-grow: 1;
-            background: #f9f9f9;
-            overflow-x: auto;
         }
         
         .chalan-container {
             width: 100%;
-            display: flex;
-            min-height: 680px;
+            height: 740px;
             position: relative;
             background: white;
             border: 2px solid #000;
+            display: flex;
         }
         
         .chalan-copy {
             flex: 1;
             padding: 15px;
             position: relative;
-            min-width: 200px;
+            display: flex;
+            flex-direction: column;
         }
         
         /* Vertical dotted lines between copies */
@@ -198,7 +147,7 @@
             position: absolute;
             left: -8px;
             color: #e91e63;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         .vertical-cut-line::before {
@@ -249,35 +198,37 @@
         .detail-label {
             flex: 1;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
         }
         
         .detail-value {
             flex: 2;
-            font-size: 13px;
+            font-size: 12px;
         }
         
         .payment-info {
             background: #ffe6f2;
-            padding: 8px;
+            padding: 10px;
             border-radius: 4px;
             margin-top: 15px;
             border: 1px solid #e91e63;
-            font-size: 12px;
+            font-size: 11px;
         }
         
         .payment-title {
             font-weight: 700;
             color: #e91e63;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
+            font-size: 12px;
         }
         
         .instructions {
             margin-top: 15px;
-            font-size: 11px;
+            font-size: 10px;
             color: #000;
             border-top: 1px dashed #000;
-            padding-top: 8px;
+            padding-top: 10px;
+            flex-grow: 1;
         }
         
         .copy-label {
@@ -294,7 +245,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-            font-size: 12px;
+            font-size: 11px;
         }
         
         .fee-table th, .fee-table td {
@@ -305,6 +256,7 @@
         
         .fee-table th {
             background: #ffe6f2;
+            font-size: 11px;
         }
         
         .signature-area {
@@ -322,39 +274,125 @@
             border-top: 1px solid #000;
             margin-top: 25px;
             padding-top: 5px;
-            font-size: 11px;
+            font-size: 10px;
         }
         
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
             padding: 20px;
             color: #666;
             font-size: 14px;
             border-top: 1px solid #ddd;
         }
         
-        @media (max-width: 968px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            .preview-section {
-                min-width: 100%;
-            }
-            
-            .chalan-container {
-                flex-direction: column;
-                min-height: auto;
-            }
-            
-            .chalan-copy {
-                margin-bottom: 20px;
-            }
-            
-            .vertical-cut-line {
-                display: none;
-            }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .modal-title {
+            font-size: 22px;
+            color: #1e5799;
+            font-weight: 700;
+        }
+        
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+            font-size: 14px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border 0.3s;
+        }
+        
+        input:focus, select:focus {
+            border-color: #1e5799;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(30, 87, 153, 0.2);
+        }
+        
+        .fee-details {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+            font-size: 14px;
+        }
+        
+        .fee-total {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1e5799;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 2px solid #ddd;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
         }
         
         /* Print Styles for Landscape */
@@ -362,10 +400,10 @@
             body * {
                 visibility: hidden;
             }
-            .chalan-container, .chalan-container * {
+            .preview-section, .preview-section * {
                 visibility: visible;
             }
-            .chalan-container {
+            .preview-section {
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -390,22 +428,383 @@
         </header>
         
         <div class="main-content">
-            <section class="form-section">
-                <h2 class="section-title">Student Fee Details</h2>
+            <section class="welcome-section">
+                <h2 class="welcome-title">Fee Chalan Generator</h2>
+                <p class="welcome-text">Fill the student details to generate fee payment chalan</p>
+                <button class="btn" id="openModal">Fill Form & Submit Student Detail</button>
+            </section>
+            
+            <section class="preview-section" id="previewSection">
+                <h2 class="section-title">Fee Chalan Preview</h2>
                 
+                <div class="chalan-container">
+                    <!-- Vertical cut lines -->
+                    <div class="vertical-cut-line left"></div>
+                    <div class="vertical-cut-line right"></div>
+                    
+                    <!-- School Copy - LEFT -->
+                    <div class="chalan-copy">
+                        <div class="copy-label">SCHOOL COPY</div>
+                        <div class="chalan-header">
+                            <div class="chalan-title">FEE PAYMENT CHALAN</div>
+                            <div class="school-name-chalan">Neelum Educational Middle Public School</div>
+                            <div>Kutton, District Neelum, Azad Kashmir</div>
+                        </div>
+                        
+                        <div class="chalan-details">
+                            <div class="detail-row">
+                                <div class="detail-label">Student Name:</div>
+                                <div class="detail-value" id="previewStudentName1">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Father Name:</div>
+                                <div class="detail-value" id="previewFatherName1">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Class:</div>
+                                <div class="detail-value" id="previewClass1">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Admission No:</div>
+                                <div class="detail-value" id="previewAdmissionNo1">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Fee Month:</div>
+                                <div class="detail-value" id="previewMonth1">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Chalan No:</div>
+                                <div class="detail-value" id="previewChalanNo1">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Issue Date:</div>
+                                <div class="detail-value" id="previewDate1">-</div>
+                            </div>
+                        </div>
+                        
+                        <table class="fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Fee Description</th>
+                                    <th>Amount (PKR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monthly Tuition Fee</td>
+                                    <td id="previewTuitionFee1">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Admission Fee</td>
+                                    <td id="previewAdmissionFee1">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Stationery Charges</td>
+                                    <td id="previewStationeryFee1">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Sports Fee</td>
+                                    <td id="previewSportsFee1">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Examination Fee</td>
+                                    <td id="previewExamFee1">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Late Fee</td>
+                                    <td id="previewLateFee1">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Other Charges</td>
+                                    <td id="previewOtherFee1">0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Fee</strong></td>
+                                    <td id="previewTotalFee1"><strong>0</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="payment-info">
+                            <div class="payment-title">PAYMENT METHODS (ONLINE ONLY)</div>
+                            <p><strong>EasyPaisa:</strong> 03556173082</p>
+                            <p><strong>HBL Konnect:</strong> 03556173082</p>
+                            <p><strong>Important:</strong> Include Student Name and Chalan No in transaction remarks.</p>
+                        </div>
+                        
+                        <div class="instructions">
+                            <p><strong>INSTRUCTIONS:</strong></p>
+                            <p>1. Fee payment is accepted ONLY through online methods (EasyPaisa/HBL Konnect).</p>
+                            <p>2. School will NOT accept cash payments directly.</p>
+                            <p>3. After payment, bring this chalan to school with transaction ID and bank stamp.</p>
+                            <p>4. Pay before the 10th of each month to avoid late fee charges.</p>
+                            <p>5. Keep transaction receipt for future reference.</p>
+                        </div>
+                        
+                        <div class="signature-area">
+                            <div class="signature-box">
+                                <div class="signature-line">Bank Stamp</div>
+                            </div>
+                            <div class="signature-box">
+                                <div class="signature-line">Transaction ID</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bank Copy - MIDDLE -->
+                    <div class="chalan-copy">
+                        <div class="copy-label">BANK COPY</div>
+                        <div class="chalan-header">
+                            <div class="chalan-title">FEE PAYMENT CHALAN</div>
+                            <div class="school-name-chalan">Neelum Educational Middle Public School</div>
+                            <div>Kutton, District Neelum, Azad Kashmir</div>
+                        </div>
+                        
+                        <div class="chalan-details">
+                            <div class="detail-row">
+                                <div class="detail-label">Student Name:</div>
+                                <div class="detail-value" id="previewStudentName2">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Father Name:</div>
+                                <div class="detail-value" id="previewFatherName2">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Class:</div>
+                                <div class="detail-value" id="previewClass2">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Admission No:</div>
+                                <div class="detail-value" id="previewAdmissionNo2">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Fee Month:</div>
+                                <div class="detail-value" id="previewMonth2">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Chalan No:</div>
+                                <div class="detail-value" id="previewChalanNo2">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Issue Date:</div>
+                                <div class="detail-value" id="previewDate2">-</div>
+                            </div>
+                        </div>
+                        
+                        <table class="fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Fee Description</th>
+                                    <th>Amount (PKR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monthly Tuition Fee</td>
+                                    <td id="previewTuitionFee2">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Admission Fee</td>
+                                    <td id="previewAdmissionFee2">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Stationery Charges</td>
+                                    <td id="previewStationeryFee2">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Sports Fee</td>
+                                    <td id="previewSportsFee2">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Examination Fee</td>
+                                    <td id="previewExamFee2">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Late Fee</td>
+                                    <td id="previewLateFee2">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Other Charges</td>
+                                    <td id="previewOtherFee2">0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Fee</strong></td>
+                                    <td id="previewTotalFee2"><strong>0</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="payment-info">
+                            <div class="payment-title">PAYMENT METHODS (ONLINE ONLY)</div>
+                            <p><strong>EasyPaisa:</strong> 03556173082</p>
+                            <p><strong>HBL Konnect:</strong> 03556173082</p>
+                            <p><strong>Important:</strong> Include Student Name and Chalan No in transaction remarks.</p>
+                        </div>
+                        
+                        <div class="instructions">
+                            <p><strong>INSTRUCTIONS:</strong></p>
+                            <p>1. Fee payment is accepted ONLY through online methods (EasyPaisa/HBL Konnect).</p>
+                            <p>2. School will NOT accept cash payments directly.</p>
+                            <p>3. After payment, bring this chalan to school with transaction ID and bank stamp.</p>
+                            <p>4. Pay before the 10th of each month to avoid late fee charges.</p>
+                            <p>5. Keep transaction receipt for future reference.</p>
+                        </div>
+                        
+                        <div class="signature-area">
+                            <div class="signature-box">
+                                <div class="signature-line">Bank Stamp</div>
+                            </div>
+                            <div class="signature-box">
+                                <div class="signature-line">Transaction ID</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student Copy - RIGHT -->
+                    <div class="chalan-copy">
+                        <div class="copy-label">STUDENT COPY</div>
+                        <div class="chalan-header">
+                            <div class="chalan-title">FEE PAYMENT CHALAN</div>
+                            <div class="school-name-chalan">Neelum Educational Middle Public School</div>
+                            <div>Kutton, District Neelum, Azad Kashmir</div>
+                        </div>
+                        
+                        <div class="chalan-details">
+                            <div class="detail-row">
+                                <div class="detail-label">Student Name:</div>
+                                <div class="detail-value" id="previewStudentName3">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Father Name:</div>
+                                <div class="detail-value" id="previewFatherName3">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Class:</div>
+                                <div class="detail-value" id="previewClass3">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Admission No:</div>
+                                <div class="detail-value" id="previewAdmissionNo3">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Fee Month:</div>
+                                <div class="detail-value" id="previewMonth3">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Chalan No:</div>
+                                <div class="detail-value" id="previewChalanNo3">-</div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-label">Issue Date:</div>
+                                <div class="detail-value" id="previewDate3">-</div>
+                            </div>
+                        </div>
+                        
+                        <table class="fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Fee Description</th>
+                                    <th>Amount (PKR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monthly Tuition Fee</td>
+                                    <td id="previewTuitionFee3">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Admission Fee</td>
+                                    <td id="previewAdmissionFee3">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Stationery Charges</td>
+                                    <td id="previewStationeryFee3">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Sports Fee</td>
+                                    <td id="previewSportsFee3">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Examination Fee</td>
+                                    <td id="previewExamFee3">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Late Fee</td>
+                                    <td id="previewLateFee3">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Other Charges</td>
+                                    <td id="previewOtherFee3">0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total Fee</strong></td>
+                                    <td id="previewTotalFee3"><strong>0</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="payment-info">
+                            <div class="payment-title">PAYMENT METHODS (ONLINE ONLY)</div>
+                            <p><strong>EasyPaisa:</strong> 03556173082</p>
+                            <p><strong>HBL Konnect:</strong> 03556173082</p>
+                            <p><strong>Important:</strong> Include Student Name and Chalan No in transaction remarks.</p>
+                        </div>
+                        
+                        <div class="instructions">
+                            <p><strong>INSTRUCTIONS:</strong></p>
+                            <p>1. Fee payment is accepted ONLY through online methods (EasyPaisa/HBL Konnect).</p>
+                            <p>2. School will NOT accept cash payments directly.</p>
+                            <p>3. After payment, bring this chalan to school with transaction ID and bank stamp.</p>
+                            <p>4. Pay before the 10th of each month to avoid late fee charges.</p>
+                            <p>5. Keep transaction receipt for future reference.</p>
+                        </div>
+                        
+                        <div class="signature-area">
+                            <div class="signature-box">
+                                <div class="signature-line">Bank Stamp</div>
+                            </div>
+                            <div class="signature-box">
+                                <div class="signature-line">Transaction ID</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn" id="downloadPdf">Download as PDF</button>
+                    <button class="btn btn-pink no-print" id="printChalan">Print Chalan</button>
+                    <button class="btn no-print" id="newChalan">Generate New Chalan</button>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>Neelum Educational Middle Public School, Kutton &copy; 2023 | Contact: 03556173082</p>
+        </footer>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Student Fee Details</h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <form id="studentForm">
                 <div class="form-group">
                     <label for="studentName">Student Name</label>
-                    <input type="text" id="studentName" placeholder="Enter student full name">
+                    <input type="text" id="studentName" placeholder="Enter student full name" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="fatherName">Father Name</label>
-                    <input type="text" id="fatherName" placeholder="Enter father's full name">
+                    <input type="text" id="fatherName" placeholder="Enter father's full name" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="studentClass">Class</label>
-                    <select id="studentClass">
+                    <select id="studentClass" required>
                         <option value="">Select Class</option>
                         <option value="Playgroup">Playgroup</option>
                         <option value="Nursery">Nursery</option>
@@ -423,7 +822,7 @@
                 
                 <div class="form-group">
                     <label for="feeMonth">Fee Month</label>
-                    <select id="feeMonth">
+                    <select id="feeMonth" required>
                         <option value="">Select Month</option>
                         <option value="January">January</option>
                         <option value="February">February</option>
@@ -442,7 +841,7 @@
                 
                 <div class="form-group">
                     <label for="admissionNo">Admission No</label>
-                    <input type="text" id="admissionNo" placeholder="Enter admission number">
+                    <input type="text" id="admissionNo" placeholder="Enter admission number" required>
                 </div>
                 
                 <div class="form-group">
@@ -450,31 +849,31 @@
                     <div class="fee-details">
                         <div class="fee-item">
                             <span>Monthly Tuition Fee</span>
-                            <input type="number" id="tuitionFee" placeholder="0" style="width: 100px; display: inline;">
+                            <input type="number" id="tuitionFee" placeholder="0" style="width: 100px; display: inline;" min="0">
                         </div>
                         <div class="fee-item">
                             <span>Admission Fee</span>
-                            <input type="number" id="admissionFee" placeholder="0" style="width: 100px; display: inline;">
+                            <input type="number" id="admissionFee" placeholder="0" style="width: 100px; display: inline;" min="0">
                         </div>
                         <div class="fee-item">
                             <span>Stationery Charges</span>
-                            <input type="number" id="stationeryFee" placeholder="0" style="width: 100px; display: inline;">
+                            <input type="number" id="stationeryFee" placeholder="0" style="width: 100px; display: inline;" min="0">
                         </div>
                         <div class="fee-item">
                             <span>Sports Fee</span>
-                            <input type="number" id="sportsFee" placeholder="0" style="width: 100px; display: inline;">
+                            <input type="number" id="sportsFee" placeholder="0" style="width: 100px; display: inline;" min="0">
                         </div>
                         <div class="fee-item">
                             <span>Examination Fee</span>
-                            <input type="number" id="examFee" placeholder="0" style="width: 100px; display: inline;">
+                            <input type="number" id="examFee" placeholder="0" style="width: 100px; display: inline;" min="0">
                         </div>
                         <div class="fee-item">
                             <span>Late Fee</span>
-                            <input type="number" id="lateFee" placeholder="0" style="width: 100px; display: inline;">
+                            <input type="number" id="lateFee" placeholder="0" style="width: 100px; display: inline;" min="0">
                         </div>
                         <div class="fee-item">
                             <span>Other Charges</span>
-                            <input type="number" id="otherFee" placeholder="0" style="width: 100px; display: inline;">
+                            <input type="number" id="otherFee" placeholder="0" style="width: 100px; display: inline;" min="0">
                         </div>
                         <div class="fee-total">
                             <span>Total Fee</span>
@@ -483,355 +882,12 @@
                     </div>
                 </div>
                 
-                <button class="btn" id="generateChalan">Generate Fee Chalan</button>
-            </section>
-            
-            <section class="preview-section">
-                <h2 class="section-title">Fee Chalan Preview (3 Copies - Single Page)</h2>
-                
-                <div class="chalan-preview" id="chalanPreview">
-                    <div class="chalan-container">
-                        <!-- Vertical cut lines -->
-                        <div class="vertical-cut-line left"></div>
-                        <div class="vertical-cut-line right"></div>
-                        
-                        <!-- School Copy - LEFT -->
-                        <div class="chalan-copy">
-                            <div class="copy-label">SCHOOL COPY</div>
-                            <div class="chalan-header">
-                                <div class="chalan-title">FEE PAYMENT CHALAN</div>
-                                <div class="school-name-chalan">Neelum Educational Middle Public School</div>
-                                <div>Kutton, District Neelum, Azad Kashmir</div>
-                            </div>
-                            
-                            <div class="chalan-details">
-                                <div class="detail-row">
-                                    <div class="detail-label">Student Name:</div>
-                                    <div class="detail-value" id="previewStudentName1">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Father Name:</div>
-                                    <div class="detail-value" id="previewFatherName1">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Class:</div>
-                                    <div class="detail-value" id="previewClass1">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Admission No:</div>
-                                    <div class="detail-value" id="previewAdmissionNo1">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Fee Month:</div>
-                                    <div class="detail-value" id="previewMonth1">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Chalan No:</div>
-                                    <div class="detail-value" id="previewChalanNo1">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Issue Date:</div>
-                                    <div class="detail-value" id="previewDate1">-</div>
-                                </div>
-                            </div>
-                            
-                            <table class="fee-table">
-                                <thead>
-                                    <tr>
-                                        <th>Fee Description</th>
-                                        <th>Amount (PKR)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Monthly Tuition Fee</td>
-                                        <td id="previewTuitionFee1">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Admission Fee</td>
-                                        <td id="previewAdmissionFee1">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stationery Charges</td>
-                                        <td id="previewStationeryFee1">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sports Fee</td>
-                                        <td id="previewSportsFee1">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Examination Fee</td>
-                                        <td id="previewExamFee1">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Late Fee</td>
-                                        <td id="previewLateFee1">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Other Charges</td>
-                                        <td id="previewOtherFee1">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Total Fee</strong></td>
-                                        <td id="previewTotalFee1"><strong>0</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            <div class="payment-info">
-                                <div class="payment-title">PAYMENT METHODS (ONLINE ONLY)</div>
-                                <p><strong>EasyPaisa:</strong> 03556173082</p>
-                                <p><strong>HBL Konnect:</strong> 03556173082</p>
-                                <p><strong>Important:</strong> Include Student Name and Chalan No in transaction remarks.</p>
-                            </div>
-                            
-                            <div class="instructions">
-                                <p><strong>INSTRUCTIONS:</strong></p>
-                                <p>1. Fee payment is accepted ONLY through online methods (EasyPaisa/HBL Konnect).</p>
-                                <p>2. School will NOT accept cash payments directly.</p>
-                                <p>3. After payment, bring this chalan to school with transaction ID and bank stamp.</p>
-                                <p>4. Pay before the 10th of each month to avoid late fee charges.</p>
-                                <p>5. Keep transaction receipt for future reference.</p>
-                            </div>
-                            
-                            <div class="signature-area">
-                                <div class="signature-box">
-                                    <div class="signature-line">Bank Stamp</div>
-                                </div>
-                                <div class="signature-box">
-                                    <div class="signature-line">Transaction ID</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Bank Copy - MIDDLE -->
-                        <div class="chalan-copy">
-                            <div class="copy-label">BANK COPY</div>
-                            <div class="chalan-header">
-                                <div class="chalan-title">FEE PAYMENT CHALAN</div>
-                                <div class="school-name-chalan">Neelum Educational Middle Public School</div>
-                                <div>Kutton, District Neelum, Azad Kashmir</div>
-                            </div>
-                            
-                            <div class="chalan-details">
-                                <div class="detail-row">
-                                    <div class="detail-label">Student Name:</div>
-                                    <div class="detail-value" id="previewStudentName2">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Father Name:</div>
-                                    <div class="detail-value" id="previewFatherName2">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Class:</div>
-                                    <div class="detail-value" id="previewClass2">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Admission No:</div>
-                                    <div class="detail-value" id="previewAdmissionNo2">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Fee Month:</div>
-                                    <div class="detail-value" id="previewMonth2">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Chalan No:</div>
-                                    <div class="detail-value" id="previewChalanNo2">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Issue Date:</div>
-                                    <div class="detail-value" id="previewDate2">-</div>
-                                </div>
-                            </div>
-                            
-                            <table class="fee-table">
-                                <thead>
-                                    <tr>
-                                        <th>Fee Description</th>
-                                        <th>Amount (PKR)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Monthly Tuition Fee</td>
-                                        <td id="previewTuitionFee2">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Admission Fee</td>
-                                        <td id="previewAdmissionFee2">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stationery Charges</td>
-                                        <td id="previewStationeryFee2">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sports Fee</td>
-                                        <td id="previewSportsFee2">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Examination Fee</td>
-                                        <td id="previewExamFee2">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Late Fee</td>
-                                        <td id="previewLateFee2">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Other Charges</td>
-                                        <td id="previewOtherFee2">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Total Fee</strong></td>
-                                        <td id="previewTotalFee2"><strong>0</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            <div class="payment-info">
-                                <div class="payment-title">PAYMENT METHODS (ONLINE ONLY)</div>
-                                <p><strong>EasyPaisa:</strong> 03556173082</p>
-                                <p><strong>HBL Konnect:</strong> 03556173082</p>
-                                <p><strong>Important:</strong> Include Student Name and Chalan No in transaction remarks.</p>
-                            </div>
-                            
-                            <div class="instructions">
-                                <p><strong>INSTRUCTIONS:</strong></p>
-                                <p>1. Fee payment is accepted ONLY through online methods (EasyPaisa/HBL Konnect).</p>
-                                <p>2. School will NOT accept cash payments directly.</p>
-                                <p>3. After payment, bring this chalan to school with transaction ID and bank stamp.</p>
-                                <p>4. Pay before the 10th of each month to avoid late fee charges.</p>
-                                <p>5. Keep transaction receipt for future reference.</p>
-                            </div>
-                            
-                            <div class="signature-area">
-                                <div class="signature-box">
-                                    <div class="signature-line">Bank Stamp</div>
-                                </div>
-                                <div class="signature-box">
-                                    <div class="signature-line">Transaction ID</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Student Copy - RIGHT -->
-                        <div class="chalan-copy">
-                            <div class="copy-label">STUDENT COPY</div>
-                            <div class="chalan-header">
-                                <div class="chalan-title">FEE PAYMENT CHALAN</div>
-                                <div class="school-name-chalan">Neelum Educational Middle Public School</div>
-                                <div>Kutton, District Neelum, Azad Kashmir</div>
-                            </div>
-                            
-                            <div class="chalan-details">
-                                <div class="detail-row">
-                                    <div class="detail-label">Student Name:</div>
-                                    <div class="detail-value" id="previewStudentName3">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Father Name:</div>
-                                    <div class="detail-value" id="previewFatherName3">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Class:</div>
-                                    <div class="detail-value" id="previewClass3">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Admission No:</div>
-                                    <div class="detail-value" id="previewAdmissionNo3">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Fee Month:</div>
-                                    <div class="detail-value" id="previewMonth3">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Chalan No:</div>
-                                    <div class="detail-value" id="previewChalanNo3">-</div>
-                                </div>
-                                <div class="detail-row">
-                                    <div class="detail-label">Issue Date:</div>
-                                    <div class="detail-value" id="previewDate3">-</div>
-                                </div>
-                            </div>
-                            
-                            <table class="fee-table">
-                                <thead>
-                                    <tr>
-                                        <th>Fee Description</th>
-                                        <th>Amount (PKR)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Monthly Tuition Fee</td>
-                                        <td id="previewTuitionFee3">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Admission Fee</td>
-                                        <td id="previewAdmissionFee3">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stationery Charges</td>
-                                        <td id="previewStationeryFee3">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sports Fee</td>
-                                        <td id="previewSportsFee3">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Examination Fee</td>
-                                        <td id="previewExamFee3">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Late Fee</td>
-                                        <td id="previewLateFee3">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Other Charges</td>
-                                        <td id="previewOtherFee3">0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Total Fee</strong></td>
-                                        <td id="previewTotalFee3"><strong>0</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            <div class="payment-info">
-                                <div class="payment-title">PAYMENT METHODS (ONLINE ONLY)</div>
-                                <p><strong>EasyPaisa:</strong> 03556173082</p>
-                                <p><strong>HBL Konnect:</strong> 03556173082</p>
-                                <p><strong>Important:</strong> Include Student Name and Chalan No in transaction remarks.</p>
-                            </div>
-                            
-                            <div class="instructions">
-                                <p><strong>INSTRUCTIONS:</strong></p>
-                                <p>1. Fee payment is accepted ONLY through online methods (EasyPaisa/HBL Konnect).</p>
-                                <p>2. School will NOT accept cash payments directly.</p>
-                                <p>3. After payment, bring this chalan to school with transaction ID and bank stamp.</p>
-                                <p>4. Pay before the 10th of each month to avoid late fee charges.</p>
-                                <p>5. Keep transaction receipt for future reference.</p>
-                            </div>
-                            
-                            <div class="signature-area">
-                                <div class="signature-box">
-                                    <div class="signature-line">Bank Stamp</div>
-                                </div>
-                                <div class="signature-box">
-                                    <div class="signature-line">Transaction ID</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="action-buttons">
+                    <button type="button" class="btn" id="generateChalan">Generate Fee Chalan</button>
+                    <button type="button" class="btn btn-pink" id="cancelForm">Cancel</button>
                 </div>
-                
-                <button class="btn" id="downloadPdf">Download as PDF</button>
-                <button class="btn btn-print no-print" id="printChalan">Print Chalan</button>
-            </section>
+            </form>
         </div>
-        
-        <footer>
-            <p>Neelum Educational Middle Public School, Kutton &copy; 2023 | Contact: 03556173082</p>
-        </footer>
     </div>
 
     <!-- Include jsPDF library for PDF generation -->
@@ -840,6 +896,34 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Modal elements
+            const modal = document.getElementById('studentModal');
+            const openModalBtn = document.getElementById('openModal');
+            const closeModalBtn = document.querySelector('.close');
+            const cancelFormBtn = document.getElementById('cancelForm');
+            const previewSection = document.getElementById('previewSection');
+            const newChalanBtn = document.getElementById('newChalan');
+            
+            // Open modal
+            openModalBtn.addEventListener('click', function() {
+                modal.style.display = 'block';
+            });
+            
+            // Close modal
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+            
+            closeModalBtn.addEventListener('click', closeModal);
+            cancelFormBtn.addEventListener('click', closeModal);
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+            
             // Set current date
             const currentDate = new Date();
             const dateElements = document.querySelectorAll('[id^="previewDate"]');
@@ -924,6 +1008,10 @@
                     document.getElementById(`previewTotalFee${i}`).textContent = totalFee;
                 }
                 
+                // Close modal and show preview
+                closeModal();
+                previewSection.style.display = 'block';
+                
                 alert('Fee chalan generated successfully! You can now download or print it.');
             });
             
@@ -966,6 +1054,19 @@
                 }
                 
                 window.print();
+            });
+            
+            // New chalan button
+            newChalanBtn.addEventListener('click', function() {
+                // Reset form
+                document.getElementById('studentForm').reset();
+                document.getElementById('totalFee').textContent = '0';
+                
+                // Hide preview and show welcome section
+                previewSection.style.display = 'none';
+                
+                // Open modal for new entry
+                modal.style.display = 'block';
             });
         });
     </script>
